@@ -52,9 +52,20 @@
     <form method="get" >
         <div class="formulario" id="formulario">
         
-            <h4>DADOS DA EMPRESA</h4><br>
+            <h4>DADOS DA EMPRESA<span><i><ion-icon name="business"></ion-icon></i></span></h4>
+            <br>
             <label for="nome-empresa">Empresa</label> <br>
             <input type="text" id="nome-empresa" >
+                <label for="iconcheck" id=check>
+                    <i>
+                        <ion-icon name="checkmark-circle"> </ion-icon>
+                    </i>
+                </label>
+                <label for="iconerror"  id="error">
+                    <i>
+                        <ion-icon name="alert"></ion-icon>
+                    </i>
+                </label>
             <br><br>
            
             <input type="radio" id="pj-direito-privado" name="pj" value="Pessoa Juridica de Direito Privado" checked>
@@ -115,7 +126,7 @@
             <br>
             
     
-            <h4>REPRESENTANTE</h4><br>
+            <h4>REPRESENTANTE <i><ion-icon name="briefcase"></ion-icon></i></h4><br>
             <label for="nome-representante">Nome do Representante</label><br>
             <input type="text" id="nome-representante"> 
             <label for="estado-civil">Estado Civil</label>
@@ -182,7 +193,7 @@
             </select><br> <br>
             <hr>
             <br><br>
-            <h4>OBJETO DO CONTRATO</h4><br>
+            <h4>OBJETO DO CONTRATO <i><ion-icon name="clipboard"></ion-icon></i></h4><br>
             <input type="radio" id="site" name="tipo-projeto" value="site" >
             <label for="site">Site</label>
             <input type="radio" id="sistema" name="tipo-projeto" value="sistema" >
@@ -191,15 +202,15 @@
             <label for="app">Aplicativo</label><br><br><br>
             <hr><br><br>
 
-            <h4>PRAZO</h4><br>
+            <h4>PRAZO <i><ion-icon name="calendar"></ion-icon></i></h4><br>
             <label for="tempo-projeto" >Tempo de execução</label><br>
-            <input type="number"  id="tempo-projeto" onblur="nomeextenso()" onblur="contadias()" >
+            <input type="number"  id="tempo-projeto" onblur="nomeextenso()" onclick="contadias()" >
             <label for="tempo-projeto" id="tempo-p"></label><br><br><br>
-            <label for="data-inicio" id="data-inicio"onclick="contadias()" >()</label>
+            <label for="data-inicio" id="data-inicio"  ></label>
             <label for="data-final" id="data-final"></label><br>
            
             <hr><br><br>
-            <h4>PAGAMENTO</h4><br>
+            <h4>PAGAMENTO <i><ion-icon name="cash"></ion-icon></i></h4><br>
             <label for="valor-projeto" >Valor Total do Projeto</label><br>
             <input type="number"  id="valor-projeto"  onblur="nomeextenso()">
             <label for="valor-extenso" id="valor_extenso" ></label>
@@ -223,7 +234,7 @@
             <br><br><br>
 
             <hr><br><br>
-            <h4>TESTEMUNHAS</h4><br>
+            <h4>TESTEMUNHAS <i><ion-icon name="people"></ion-icon></i></h4><br>
             <h5>Byte</h5>
             <label for="testemunha-b">Nome</label><br>
             <input type="text" id="nome-t-byte"> 

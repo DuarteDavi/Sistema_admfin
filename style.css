@@ -219,8 +219,17 @@ body{
 #num-parcelas1{
     display: none;
 }
+#valor_parcela{
+    display:none;
+}
 #bloco-valor{
     height: 60px;
     width: 40px;
+    display: none;
+}
+#error{
+   display: none;
+}
+#check{
     display: none;
 }
