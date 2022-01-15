@@ -1,5 +1,6 @@
 function games(){
-    let game = document.getElementById("formulario");
+    let game = document.getElementById("formularioprincipal");
         game.style.display = "none";
+        
 }
 
