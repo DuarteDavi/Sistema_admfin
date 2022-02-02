@@ -1,0 +1,70 @@
+#contratofeito{
+    width: 800px;
+    position: relative;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+
+}
+
+#cabecalho{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+#rodape{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    bottom: -500px;
+}
+p{
+   font-size: 12px;  
+   font-family: Arial, Helvetica, sans-serif; 
+   text-align: justify;
+   line-height: 1cm;
+   margin-left:3cm ;
+   margin-right: 2cm;
+   margin-top: 2cm;
+}
+div{
+    width: 800px;
+}
+#assinatura{
+    position: relative;
+}
+#presidente{
+    position: absolute;
+    left: 50px;
+    width: 400px;
+    padding-top: 50px;
+    text-align: center;
+
+}
+#contratante{
+    position: absolute;
+    left: 450px;
+    width: 400px;
+    padding-top: 50px;
+    text-align: center;
+    
+}
+#testemunha-da-byte{
+    position: absolute;
+    left: 50px;
+    width: 250px;
+    padding-top: 200px;
+    text-align: justify;
+}
+#testemunha-da-contratante{
+    position: absolute;
+    left: 450px;
+    width:220px;
+    padding-top: 218px;
+    text-align: justify;
+}
+

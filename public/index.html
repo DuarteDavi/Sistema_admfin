@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pt-br" id="volta-topo">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adm-Fin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="javascript" href="script.js">
+    <link rel="icon" type="imagem/png" href="../public/logo-aba.png" >
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+</head>
+
+<body id="body">
+    <!-- menu de nevagação-->
+    <div class="navigation">
+        <ul>
+            <li class="list active">
+                <a href="#" onclick="home()">
+                    <span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#" onclick="geracontrato()">
+                    <span class="icon">
+                        <ion-icon name="document-text-outline"></ion-icon>
+                    </span>
+                    <span class="title">Gerar Contrato</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="# " onclick="games()">
+                    <span class="icon">
+                        <ion-icon name="book"></ion-icon>
+                    </span>
+                    <span class="title">Ata de Eleição</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="people"></ion-icon>
+                    </span>
+                    <span class="title">Termo de Voluntariado</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--botão dark-mode-->
+    <div class="botaozin" onclick="darkmode()">
+        <input type="checkbox" name="btn" id="btn">
+        <label for="btn" class="label">
+            <i>
+                <ion-icon name="sunny" id='sun' class="sun"></ion-icon>
+            </i>
+            <i>
+                <ion-icon name="moon" id='moon' class="moon"></ion-icon>
+            </i>
+        </label>
+    </div>
+    <div id="porcentagem"> </div>
+    <div id="mostra-porcentagem">
+    </div>
+    </div>
+    <!--home-->
+    <div id="relatorio">
+        <iframe width="900" height="600" src="https://datastudio.google.com/embed/reporting/9f2c1fa1-2108-4898-963b-0f32bd92b490/page/kqGbC" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+    <!--formulário para gerar contrato-->
+    <form method="post"  action="../public/contratofeito.html" id="formularioprincipal" class="formularioprincipal">
+        <div id="empresa">
+            <div id="icone-empresa">
+                <i>
+                    <ion-icon name="business" id="ic"></ion-icon>
+                </i>
+            </div>
+
+            <div id="titulo-empresa">
+                <h4>DADOS DA EMPRESA</h4>
+            </div>
+
+            <div id="recolhe-empresa">
+                <i onclick="recolheempresa()">
+                    <ion-icon name="play" id="ic2"></ion-icon>
+                    <ion-icon name="play" id="ic3"></ion-icon>
+                </i>
+            </div>
+        </div>
+        <br>
+        <div id="bloco-empresa">
+            <div class=nome-empresa>
+                <label for="nome-empresa" >Empresa</label> <br>
+                <input type="text" id="nome-empresa" onblur="checkInputs()">
+                <label for="nome-empresa" id="msg-error"><span class="material-icons-outlined">
+                    </span></label>
+            </div>
+            <br><br>
+
+            <input type="radio" id="pj-direito-privado" name="pj" value="Pessoa Juridica de Direito Privado" checked>
+            <label for="pj-direito-privado">Pessoa Juridica de Direito Privado</label>
+
+            <input type="radio" id="pj-direito-publico" name="pj" value="Pessoa Juridica de Direito Publico">
+            <label for="pj-direito-publico">Pessoa Juridica de Direito Publico</label><br><br>
+
+            <!--trocar o nome das variaveis em html e javascript, era só um teste boooy-->
+
+            <div class="cnpj">
+                <label for="cnpj">CNPJ</label> <br>
+                <input type="number" id="cnpj" name="cnpj" maxlength="14" size="14" onblur="formatacnpj()">
+                <label for="format-cnpj" id="cnpj-formatado"></label>
+            </div><br>
+
+            <div class="logradouro">
+                <label for="logradouro">Logradouro</label><br>
+                <input type="number" id="logradouro-empresa">
+            </div> <br>
+
+            <div class="bairro-empresa">
+                <label for="bairro-empresa">Bairro</label><br>
+                <input type="text" id="bairro-empresa">
+            </div> <br>
+
+
+            <div class="cidade-empresa">
+                <label for="cidade-empresa" class="cidade1">Cidade</label>
+                <input type="text" id="cidade-empresa" />
+
+                <label for="cep-empresa" class="cep1">CEP</label>
+                <input type="text" id="cep-empresa" onblur="formatacep()" />
+                <label for="cep-empresa" id="cep-formatado-empresa"></label>
+
+                <label for="uf-empresa" class="uf1">UF</label>
+                <select name="" id="uf-empresa">
+                    <option value="RS">RS</option>
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AP">AP</option>
+                    <option value="AM">AM</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MT">MT</option>
+                    <option value="MS">MS</option>
+                    <option value="MG">MG</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PR">PR</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="R0">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="SC">SC</option>
+                    <option value="SP">SP</option>
+                    <option value="SE">SE</option>
+                    <option value="TO">TO</option>
+                </select>
+            </div>
+            <br>
+        </div>
+
+        <div id=representante>
+            <div id="icone-representante">
+                <i>
+                    <ion-icon name="briefcase" id='ic4' alt=""></ion-icon>
+                </i>
+
+            </div>
+            <div id="titulo-representante">
+                <h4>REPRESENTANTE </h4>
+            </div>
+            <div id="recolhe-representante">
+                <i onclick="recolherepresentante()">
+                    <ion-icon name="play" id="ic5"></ion-icon>
+                    <ion-icon name="play" id="ic6"></ion-icon>
+                </i>
+            </div>
+
+        </div>
+        <div id="bloco-representante">
+            <div class="nome-representante">
+                <label for="nome-representante">Nome do Representante</label><br>
+                <input type="text" id="nome-representante">
+            </div><br>
+            <div class="estado-civil">
+                <label for="estado-civil">Estado Civil</label><br>
+                <select name="" id="estado-civil">
+                    <option value="solteiro">solteiro</option>
+                    <option value="casado">casado</option>
+                    <option value="divorciado">divorciado</option>
+                    <option value="viuvo">viúvo</option>
+                    <option value="separado">separado</option>
+                </select>
+            </div>
+            <br><br>
+
+            <div class="profissao-representante">
+                <label for="profissao-representante"> Profissão</label><br>
+                <input type="text" id="profissao-representante"><br>
+            </div><br>
+
+            <div class="cpf-representante">
+                <label for="cpf-representante"> CPF</label><br>
+                <input type="number" id="cpf-representante" onblur="formatacpf()">
+                <label for="cpf-representante" id="cpf-formatado"></label>
+            </div><br>
+
+            <div class="rg-representante">
+                <label for="rg-representante">RG</label><br>
+                <input type="text" id="rg-representante">
+            </div> <br>
+
+            <div class="logradouro">
+                <label for="logradouro">Logradouro</label><br>
+                <input type="text" id="logradouro">
+            </div> <br>
+
+            <div class="bairro-representante">
+                <label for="bairro-representante">Bairro</label><br>
+                <input type="text" id="bairro-representante">
+            </div><br>
+
+            <div class="cidade-representante">
+                <label for="cidade-representante">Cidade</label><br>
+                <input type="text" id="cidade-representante">
+            </div><br>
+
+            <div class="cep-representante">
+                <label for="cep-representante">CEP</label><br>
+                <input type="text" id="cep-representante" onblur="formatacep()">
+                <label for="cep-representante" id="cep-formatado"></label>
+            </div><br><br>
+
+            <label for="uf-representante">UF</label>
+            <select name="" id="uf-representante">
+                <option value="RS">RS</option>
+                <option value="AC">AC</option>
+                <option value="AL">AL</option>
+                <option value="AP">AP</option>
+                <option value="AM">AM</option>
+                <option value="BA">BA</option>
+                <option value="CE">CE</option>
+                <option value="DF">DF</option>
+                <option value="ES">ES</option>
+                <option value="GO">GO</option>
+                <option value="MA">MA</option>
+                <option value="MT">MT</option>
+                <option value="MS">MS</option>
+                <option value="MG">MG</option>
+                <option value="PA">PA</option>
+                <option value="PB">PB</option>
+                <option value="PR">PR</option>
+                <option value="PE">PE</option>
+                <option value="PI">PI</option>
+                <option value="RJ">RJ</option>
+                <option value="RN">RN</option>
+                <option value="R0">RO</option>
+                <option value="RR">RR</option>
+                <option value="SC">SC</option>
+                <option value="SP">SP</option>
+                <option value="SE">SE</option>
+                <option value="TO">TO</option>
+            </select><br>
+        </div><br>
+
+        <div id="contrato">
+            <div id="icone-contrato">
+                <i>
+                    <ion-icon name="clipboard" id="ic9"></ion-icon>
+                </i>
+            </div>
+            <div id="titulo-contrato">
+                <h4>OBJETO DO CONTRATO</h4>
+            </div>
+
+            <div id="recolhe-contrato">
+                <i onclick="recolhecontrato()">
+                    <ion-icon name="play" id="ic7"></ion-icon>
+                    <ion-icon name="play" id="ic8"></ion-icon>
+                </i>
+            </div>
+        </div>
+
+        <div id="bloco-contrato">
+
+            
+                <input type="radio" id="site" name="tipo-projeto" value="site" checked>
+                <label for="site">Site</label>
+                <input type="radio" id="sistema" name="tipo-projeto" value="sistema">
+                <label for="sistema">Sistema</label>
+                <input type="radio" id="app" name="tipo-projeto" value="app">
+                <label for="app">Aplicativo</label><br><br>
+            
+           
+                <p>Tem hospedagem?</p>
+                <input type="radio" id="sim" name="dominioo" value="sim" onclick="mostradominio()">
+                <label for="sim"> Sim</label>
+                <input type="radio" id="nao" name="dominioo" value="nao" checked onclick="recolhedominio()" >
+                <label for="sim"> Não</label>
+                <input type="text" id="linksite" placeholder="Digite o link aqui"><br><br>
+                <p>O que vai ser feito?</p>
+                <textarea name="objeto" id="objeto" cols="30" rows="10" placeholder=
+                "
+                 1.1 Home;
+                 1.2 Quem somos;
+                 1.3 FAQs;
+                 1.4 Contato
+                    ...
+                    ...
+                    ..."></textarea><br>
+
+            
+           
+
+
+        </div><br>
+
+        <div id="prazo">
+            <div id="icone-prazo">
+                <i>
+                    <ion-icon name="calendar" id="ic12"></ion-icon>
+                </i>
+            </div>
+            <div id="titulo-prazo">
+                <h4>PRAZO </h4>
+            </div>
+            <div id="recolhe-prazo">
+                <i onclick="recolheprazo()">
+                    <ion-icon name="play" id="ic10"></ion-icon>
+                    <ion-icon name="play" id="ic11"></ion-icon>
+                </i>
+            </div>
+        </div>
+
+        <div id="bloco-prazo">
+
+            <div class="tempo-projeto">
+                <label for="tempo-projeto">Tempo de execução</label><br>
+                <input type="number" id="tempo-projeto" onblur="nomeextenso()" onclick="contadias()">
+                <label for="tempo-projeto" id="tempo-p"></label><br>
+                <label for="data-inicio" id="data-inicio"></label>
+                <label for="data-final" id="data-final"></label><br>
+            </div><br>
+        </div><br>
+        <div id="pagamento">
+            <div id="icone-pagamento">
+                <i>
+                    <ion-icon name="cash" id="ic15"></ion-icon>
+                </i>
+            </div>
+            <div id="titulo-pagamento">
+                <h4>PAGAMENTO </h4>
+            </div>
+            <div id="recolhe-pagamento">
+                <i onclick="recolhepagamento()">
+                    <ion-icon name="play" id="ic13"></ion-icon>
+                    <ion-icon name="play" id="ic14"></ion-icon>
+                </i>
+            </div>
+        </div>
+        <div id="bloco-pagamento">
+
+            <div class="valor-representante">
+                <label for="valor-projeto">Valor Total do Projeto</label><br>
+                <input type="number" id="valor-projeto" onblur="nomeextenso()">
+                <label for="valor-extenso" id="valor_extenso"></label>
+            </div><br>
+
+            <input type="radio" id="avista" name="tipo-pagamento" value="À vista" onclick="recolheparcelas()">
+            <label for="tipo-pagamento">À vista</label>
+
+            <input type="radio" id="parcelado" name="tipo-pagamento" value="parcelado" onclick="mostraparcelas()">
+            <label for="tipo-pagamento">Parcelado</label>
+            <input type="radio" id="entrada-parcelado" name="tipo-pagamento" value="Parcelado">
+            <label for="tipo-pagamento">Entrada + Parcela</label><br><br>
+
+            <div class="num-parcelas">
+                <label for="num-parcelas" id="num-parcelas1">Qntd Parcelas</label><br>
+                <input type="number" id="num-parcelas" name="num-parcelas" onchange="mostra_valor_qtd_parcela()">
+                <label for="valor-parcela" id="valor_parcela">Valor da Parcela:</label><br>
+            </div>
+        </div><br>
+        <div id="testemunha">
+            <div id="icone-testemunha">
+                <i>
+                    <ion-icon name="people" id="ic18"></ion-icon>
+                </i>
+            </div>
+            <div id="titulo-testemunha">
+                <h4>TESTEMUNHAS </h4>
+            </div>
+            <div id="recolhe-testemunha">
+                <i onclick="recolhetestemunha()">
+                    <ion-icon name="play" id="ic16"></ion-icon>
+                    <ion-icon name="play" id="ic17"></ion-icon>
+                </i>
+            </div>
+
+        </div>
+        <div id="bloco-testemunha">
+            <div id="testemunhabyte">
+                <h5>Byte</h5>
+
+                 <div class="testemunha-b">
+                    <label for="testemunha-b">Nome</label><br>
+                    <input type="text" id="nome-t-byte">
+                </div><br>
+
+                <div class="cpf-t-b">
+                    <label for="cpf-t-b">CPF</label><br>
+                    <input type="text" id="cpf-t-b">
+                </div>
+            </div>
+            <div id="testemunhacontratada">
+
+                <div class="testemunha-c">
+                    <h5>Contratada</h5>
+                    <label for="testemunha-c">Nome</label><br>
+                    <input type="text" id="nome-t-contratada">
+                </div><br>
+
+                <div class="cpf-t-c">
+                    <label for="cpf-t-c">CPF</label><br>
+                    <input type="text" id="cpf-t-c">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id="envia-reseta">
+            <input  type="submit" value="ENVIAR" id="enviar">
+            <input type="reset" value="LIMPAR" id="limpar">
+        </div>
+
+    </form>
+    <!-- botão volta ao topo-->
+
+    <a href="#" class="volta-topo" onclick="subirtela()">
+        <i class="icone-volto-topo">
+            <ion-icon name="arrow-up-circle-outline"></ion-icon>
+        </i>
+    </a>
+    </div>
+    <!--script para seleção de função no menu-->
+    <script>
+        const list = document.querySelectorAll('.list');
+        function activeLink() {
+            list.forEach((item) =>
+                item.classList.remove('active'));
+            this.classList.add("active");
+        }
+        list.forEach((item) =>
+            item.addEventListener('click', activeLink));
+    </script>
+    <!--script para o botao de darkmode-->
+    <script type="text/javascript " src="../src/darkmode.js"></script>
+    <!--script para display  games-->
+    <script type="text/javascript" src="../src/games.js"></script>
+    <!--script para o formulário-->
+    <script type="text/javascript" src="../src/gerar-contrato.js"></script>
+    <!--script para o display home-->
+    <script type="text/javascript " src="../src/home.js"></script>
+    <!--script para o calcular o valor da parcela-->
+    <script type="text/javascript" src="../src/num-parcelas.js"></script>
+    <!--script para mostra o valor por extenso-->
+    <script type="text/javascript" src="../src/valor_extenso.js"></script>
+    <!--script para o botao de voltar tela-->
+    <script type="text/javascript" src="../src/botaosubirtela.js"></script>
+    <!--script para formatar cnpj-->
+    <script type="text/javascript" src="../src/formatainput.js"></script>
+    <!--script para contar dias-->
+    <script type="text/javascript" src="../src/contadias.js"></script>
+    <!--script para recolher blocos do formulário-->
+    <script type="text/javascript" src="../src/recolhe-blocos.js"></script>
+     <!--script para mostrar bloco dominio-->
+     <script type="text/javascript" src="../src/mostradominio.js"></script>
+     <!--script que valida o formulário-->
+     <script type="text/javascript" src="../src/valida_formulario.js"></script>
+    <!--scripts para os icones do menu-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

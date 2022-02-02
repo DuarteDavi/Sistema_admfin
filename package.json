@@ -1,0 +1,27 @@
+{
+  "name": "sistema_admfin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "botaosubirtela.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DuarteDavi/Sistema_admfin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DuarteDavi/Sistema_admfin/issues"
+  },
+  "homepage": "https://github.com/DuarteDavi/Sistema_admfin#readme",
+  "dependencies": {
+    "extenso": "^2.0.1"
+  },
+  "devDependencies": {
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1"
+  }
+}

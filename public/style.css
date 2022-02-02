@@ -1,0 +1,695 @@
+/*-----------------------------variaveis-----------------------------------------------------*/
+:root{
+   --cor-principal: #7ae18d;
+   --cor-secundaria: #6f6f6f;
+   --body-bg: #fafafa;
+   --erroinput: red;
+   
+}
+/* ---------------------------------menu de navegação---------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+*{margin:0; 
+  padding: 0;
+  box-sizing: border-box;
+  font-family:"Poppins", sans-serif;
+}
+body{
+    background: #fafafa;
+    color: #000;
+    }
+
+.navigation{
+    position: fixed;
+    height: 500px;
+    background: var(--cor-secundaria);
+    width: 70px;
+    box-shadow: 10px 0 0 --cor-principal;
+    border-left: 10px solid var(--cor-secundaria);
+    overflow-x:hidden;
+    transition: 0.5s;
+    top: 20px;
+}
+.navigation:hover{
+    width: 300px;
+}
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 50px;
+}
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.navigation ul li a{
+    position: relative;
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    color: #ffffff;
+}
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 70px;    
+}
+.navigation ul li a .icon ion-icon{
+    position: relative;
+    font-size: 1.5rem;
+    z-index: 1;
+}
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: left 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+.navigation ul li.active{
+    background: var(--cor-principal);
+}
+.navigation ul li.active a::before{
+    content: "";
+    position: absolute;
+    top:-30px;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    background: var(--cor-secundaria);
+    border-radius: 50%;
+    box-shadow: 15px 15px 0 var(--cor-principal);
+}
+.navigation ul li.active a::after{
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    background: var(--cor-secundaria);
+    border-radius: 50%;
+    box-shadow: 15px 15px  var(--cor-secundaria);
+}
+
+/*@-----------------------------botão dark mode-------------------------------------------*/
+*{
+    box-sizing: border-box;
+}
+.darkmode{
+    transition: background 0.5s linear, color 0.5s linear;
+    position: inherit;
+    background: #222222;
+    color: white;
+}
+.botaozin{
+    top:20px;
+    right:15px;
+    position:fixed;
+
+} 
+.label{
+    background: color;
+    border-radius: 20%;
+    display: inline-block;
+    width:50px;
+    height:30px;
+    cursor:pointer;
+    user-select: none;
+    transition:background 0.5s linear; 
+    background:var(--cor-principal);
+}
+#btn{
+    visibility:hidden;
+}
+#sun{
+    visibility:hidden;
+    font-size: 20px;
+    padding-left: 15px;
+    padding-top:4px ;
+    position: fixed;
+    color: var(--cor-secundaria);
+}
+#moon{
+    visibility: visible;
+    font-size: 20px;
+    padding-left: 15px;
+    padding-top:4px ;
+    position: fixed;
+    color: var(--cor-secundaria);
+
+}
+/*botão volta ao topo*/
+.volta-topo{
+    position: fixed;
+    color: var(--cor-principal) ;
+    text-decoration: none;
+    background: var(--cor-secundaria);
+    border-radius: 50%;
+    right: 15px;
+    bottom:15px;
+    width: 40px;
+    height: 40px;
+    box-shadow: 3px 3px 10px #333333;
+    transition: 0.5s;
+    display: none;
+    z-index:999;
+}
+.icone-volto-topo ion-icon{
+    font-size: 40px;
+}
+/* relatório da página home*/
+#relatorio{
+    display:initial;
+    height: 500px;
+    width: 920px;
+    position: relative;
+    left: 350px;
+    top:10px
+}
+/*PORCENTAGEM CONCLUÍDA(ainda n foi concluido)*/
+#porcentagem{
+    top: 10px;
+    left:380px;
+    position:relative;
+    padding: 5px;
+    width: 600px;
+    background-color: white; 
+    height: 5px;
+    border-radius: 12px;
+    border: black 0.5px;
+}
+#mostra-porcentagem{
+    left:990px;
+    position:relative;
+    width: 150px;
+    background-color: white; 
+    height: 20px;
+    border:  black 0.5px;
+    font-size: 15px;
+    top: 7px;
+}
+
+
+/* -----------------------------formulário -----------------------------------*/
+.formularioprincipal{
+    top:15px;
+    left:380px;
+    position:relative;
+    padding: 20px;
+    border:4px ;
+    display:none; 
+    width: 600px; 
+
+    
+
+}
+.cidade-empresa{
+    display:flex;
+}
+.cidade1,.cep1,.uf1 {
+  display: flex;
+  flex-direction: column;
+}
+h4{
+    color: var(--cor-secundaria);
+}
+.formularioprincipal input{
+    
+    height: 40px;
+    border: 0,3px;
+    border-color: black;
+    
+     
+}
+.formularioprincipal select{
+    height:40px;
+    width: 60px;
+}
+#estado-civil{
+    width: 100px;
+    align-items: center;
+    font-size: 15px;
+
+}
+#enviar{
+    width: 80px;
+    height:40px;
+    background:var(--cor-principal);
+    border-radius: 5px;
+    font-size: 20px;
+    color:white;
+}
+#limpar{
+    width: 80px;
+    height:40px;
+    background:var(--cor-secundaria);
+    border-radius: 5px;
+    font-size: 20px;
+    color:white;
+}
+#num-parcelas{
+    display: none;
+}
+#num-parcelas1{
+    display: none;
+}
+#valor_parcela{
+    display:none;
+}
+#bloco-valor{
+    height: 60px;
+    width: 40px;
+    display: none;
+}
+#error{
+   display: none;
+   color: #db5a5a;
+}
+#check{
+    display: none;
+    color:#7ae18d;
+}
+/*----------------------------------------------BLOCO EMPRESA-----------------------------------------------------------*/
+#empresa{
+    background: var(--cor-principal);
+    color: var(--cor-secundaria);
+    position: relative;
+    width: 600px;
+    height: 60px;
+    background: var(--cor-principal);
+    transition: 0.5s;
+
+}
+#icone-empresa{
+    position: absolute;
+    left:10px;
+    height: 50px;
+    width: 80px;
+    top: 5px;
+}
+#titulo-empresa{
+    position: absolute;
+    left: 180px;
+    top: 20px;
+    width: 180px;
+    height: 20px;
+}
+#ic{
+    color: var(--cor-secundaria);
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    left: 20px;
+    top: 5px;
+}
+#recolhe-empresa{
+    position: absolute;
+    left: 540px;
+    height: 50px;
+    width: 60px;
+    top: 5px;
+}
+#ic2{
+    position: absolute;
+    height: 30px;
+    width: 40px;
+    top: 10px;
+    left: 10px;
+    color: var(--cor-secundaria);
+    transform: rotate(90deg);
+    visibility: visible;
+}
+#ic3{
+    position: absolute;
+    height: 30px;
+    width: 40px;
+    top: 10px;
+    left: 10px;
+    color: var(--cor-secundaria);
+    transform: rotate(270deg);
+    visibility: hidden;
+
+}
+
+#bloco-empresa{
+    display: initial;
+}
+/*-------------------------------------------------BLOCO REPRESENTANTE------------------------------------------------*/
+#representante{
+    background: var(--cor-principal);
+    color: var(--cor-secundaria);
+    position: relative;
+    width: 600px;
+    height: 60px;
+    background: var(--cor-principal);
+    transition: 0.5s;
+
+}
+#icone-representante{
+    position: absolute;
+    left:10px;
+    height: 50px;
+    width: 80px;
+    top: 5px;
+}
+#titulo-representante{
+    position: absolute;
+    left: 180px;
+    top: 20px;
+    width: 180px;
+    height: 20px;
+}
+#ic4{
+    color: var(--cor-secundaria);
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    left: 20px;
+    top: 5px;
+}
+#ic5{
+    position: absolute;
+    height: 30px;
+    width: 40px;
+    top: 10px;
+    left: 10px;
+    color: var(--cor-secundaria);
+    transform: rotate(90deg);
+    visibility: visible;
+}
+#ic6{
+    position: absolute;
+    height: 30px;
+    width: 40px;
+    top: 10px;
+    left: 10px;
+    color: var(--cor-secundaria);
+    transform: rotate(270deg);
+    visibility: hidden;
+
+}
+#recolhe-representante{
+    position: absolute;
+    left: 540px;
+    height: 50px;
+    width: 60px;
+    top: 5px;
+}
+#bloco-represente{
+    display: initial;
+}
+/*--------------------------------------------------BLOCO CONTRATO-----------------------------------------------------*/
+#contrato{
+    background: var(--cor-principal);
+    color: var(--cor-secundaria);
+    position: relative;
+    width: 600px;
+    height: 60px;
+    background: var(--cor-principal);
+    transition: 0.5s;
+
+}
+#icone-contrato{
+    position: absolute;
+    left:10px;
+    height: 50px;
+    width: 80px;
+    top: 5px;
+}
+#titulo-contrato{
+    position: absolute;
+    left: 180px;
+    top: 20px;
+    width: 240px;
+    height: 20px;
+}
+#ic9{
+    color: var(--cor-secundaria);
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    left: 20px;
+    top: 5px;
+}
+#recolhe-contrato{
+    position: absolute;
+    left: 540px;
+    height: 50px;
+    width: 60px;
+    top: 5px;
+}
+#ic7{
+    position: absolute;
+    height: 30px;
+    width: 40px;
+    top: 10px;
+    left: 10px;
+    color: var(--cor-secundaria);
+    transform: rotate(90deg);
+    visibility: visible;
+}
+#ic8{
+    position: absolute;
+    height: 30px;
+    width: 40px;
+    top: 10px;
+    left: 10px;
+    color: var(--cor-secundaria);
+    transform: rotate(270deg);
+    visibility: hidden;
+
+}
+
+#bloco-contrato{
+    display: initial;
+}
+#linksite{
+    display: none;
+}
+/*------------------------------------------------BLOCO PRAZO---------------------------------------------------------*/
+#prazo{
+    background: var(--cor-principal);
+    color: var(--cor-secundaria);
+    position: relative;
+    width: 600px;
+    height: 60px;
+    background: var(--cor-principal);
+    transition: 0.5s;
+
+}
+#icone-prazo{
+    position: absolute;
+    left:10px;
+    height: 50px;
+    width: 80px;
+    top: 5px;
+}
+#titulo-prazo{
+    position: absolute;
+    left: 180px;
+    top: 20px;
+    width: 180px;
+    height: 20px;
+}
+#ic12{
+    color: var(--cor-secundaria);
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    left: 20px;
+    top: 5px;
+}
+#recolhe-prazo{
+    position: absolute;
+    left: 540px;
+    height: 50px;
+    width: 60px;
+    top: 5px;
+}
+#ic10{
+    position: absolute;
+    height: 30px;
+    width: 40px;
+    top: 10px;
+    left: 10px;
+    color: var(--cor-secundaria);
+    transform: rotate(90deg);
+    visibility: visible;
+}
+#ic11{
+    position: absolute;
+    height: 30px;
+    width: 40px;
+    top: 10px;
+    left: 10px;
+    color: var(--cor-secundaria);
+    transform: rotate(270deg);
+    visibility: hidden;
+
+}
+
+#bloco-prazo{
+    display: initial;
+}
+/*------------------------------------------------BLOCO PAGAMENTO---------------------------------------------------------*/
+#pagamento{
+    background: var(--cor-principal);
+    color: var(--cor-secundaria);
+    position: relative;
+    width: 600px;
+    height: 60px;
+    background: var(--cor-principal);
+    transition: 0.5s;
+
+}
+#icone-pagamento{
+    position: absolute;
+    left:10px;
+    height: 50px;
+    width: 80px;
+    top: 5px;
+}
+#titulo-pagamento{
+    position: absolute;
+    left: 180px;
+    top: 20px;
+    width: 180px;
+    height: 20px;
+}
+#ic15{
+    color: var(--cor-secundaria);
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    left: 20px;
+    top: 5px;
+}
+#recolhe-pagamento{
+    position: absolute;
+    left: 540px;
+    height: 50px;
+    width: 60px;
+    top: 5px;
+}
+#ic13{
+    position: absolute;
+    height: 30px;
+    width: 40px;
+    top: 10px;
+    left: 10px;
+    color: var(--cor-secundaria);
+    transform: rotate(90deg);
+    visibility: visible;
+}
+#ic14{
+    position: absolute;
+    height: 30px;
+    width: 40px;
+    top: 10px;
+    left: 10px;
+    color: var(--cor-secundaria);
+    transform: rotate(270deg);
+    visibility: hidden;
+
+}
+
+#bloco-pagamento{
+    display: initial;
+}
+/*------------------------------------------------BLOCO TESTEMUNHAS---------------------------------------------------------*/
+#testemunha{
+    background: var(--cor-principal);
+    color: var(--cor-secundaria);
+    position: relative;
+    width: 600px;
+    height: 60px;
+    background: var(--cor-principal);
+    transition: 0.5s;
+
+}
+#icone-testemunha{
+    position: absolute;
+    left:10px;
+    height: 50px;
+    width: 80px;
+    top: 5px;
+}
+#titulo-testemunha{
+    position: absolute;
+    left: 180px;
+    top: 20px;
+    width: 180px;
+    height: 20px;
+}
+#ic18{
+    color: var(--cor-secundaria);
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    left: 20px;
+    top: 5px;
+}
+#recolhe-testemunha{
+    position: absolute;
+    left: 540px;
+    height: 50px;
+    width: 60px;
+    top: 5px;
+}
+#ic16{
+    position: absolute;
+    height: 30px;
+    width: 40px;
+    top: 10px;
+    left: 10px;
+    color: var(--cor-secundaria);
+    transform: rotate(90deg);
+    visibility: visible;
+}
+#ic17{
+    position: absolute;
+    height: 30px;
+    width: 40px;
+    top: 10px;
+    left: 10px;
+    color: var(--cor-secundaria);
+    transform: rotate(270deg);
+    visibility: hidden;
+
+}
+
+#bloco-testemunha{
+    display: initial;
+}
+#testemunhabyte{
+    position: relative;
+    left: 50px;
+    width: 250px;
+    top: 20px;
+    
+    
+}
+#testemunhacontratada{
+    position:relative;
+    left: 350px;
+    width: 250px;
+    top: -130px;
+    
+
+
+}
+/*------------------------------------------------------ENVIA E RESETA----------------------------------------------------*/
+#envia-reseta{
+    position: relative;
+    left: 220px;
+}
