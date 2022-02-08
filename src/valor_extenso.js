@@ -39,8 +39,7 @@ function nomeextenso(){
 
     finalmente1=x1+c1+y1+d1+z1+u1+" dias";
     document.getElementById('tempo-p').innerText = finalmente1;}
-    x = extenso('26');
-    console.log(x)
+   
 
     
 

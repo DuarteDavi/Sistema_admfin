@@ -10,3 +10,6 @@ import "./recolhe-blocos.js"
 import "./script.js"
 import "./valida_formulario.js"
 import "./valor_extenso.js"
+import "./mostradominio.js"
+import "./pegadados.js"
+
